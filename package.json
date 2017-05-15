@@ -1,0 +1,27 @@
+{
+  "name": "central-services-qa",
+  "version": "0.0.1",
+  "description": "QA deployment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LevelOneProject/central-services-qa.git"
+  },
+  "keywords": [
+    "QA",
+    "central-services",
+    "deploy"
+  ],
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/LevelOneProject/central-services-qa/issues"
+  },
+  "homepage": "https://github.com/LevelOneProject/central-services-qa#readme",
+  "devDependencies": {
+    "aws-sdk": "2.50.0"
+  }
+}
