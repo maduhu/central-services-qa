@@ -2,13 +2,14 @@ machine:
   node:
     version: 7.6.0
   environment:
-    AWS_ACCOUNT_ID: 886503637725
     AWS_REGION: us-west-2
 
 test:
   override:
     - "true"
 
-deploy:
+deployment:
   qa:
-    branch: /master/
+    branch: master
+    commands:
+      - node index.js
