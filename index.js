@@ -10,7 +10,7 @@ const createTaskDefinition = (service) => {
     containerDefinitions: [
       {
         name: service.name,
-        image: `${service.image}:${service.version}`,
+        image: `${service.image}:${service.imageTag}`,
         essential: true,
         memoryReservation: 200,
         portMappings: [

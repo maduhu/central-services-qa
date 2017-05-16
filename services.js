@@ -3,7 +3,7 @@ const Variables = require('./variables')
 module.exports = {
   registry: {
     name: 'central-end-user-registry',
-    version: '0.7.0',
+    imageTag: 'v0.7.0',
     environment: [
       {
         name: 'CREG_DATABASE_URI',
