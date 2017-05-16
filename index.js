@@ -34,9 +34,9 @@ const createTaskDefinition = (service) => {
 }
 
 const deployServices = () => {
-  Object.keys(services).forEach((service) => {
-    const serviceDef = services[service]
-    const taskDefinition = createTaskDefinition(serviceDef)
+  Object.keys(services).forEach((serviceKey) => {
+    const service = services[serviceKey]
+    const taskDefinition = createTaskDefinition(service)
     ecs.registerTaskDefinition(taskDefinition)
       .then(t => ecs.deployService(Variables.cluster, service.name, t, service.desiredCount))
   })
