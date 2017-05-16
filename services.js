@@ -17,5 +17,26 @@ module.exports = {
     desiredCount: 1,
     port: Variables.registry.port,
     image: `${Variables.aws_account_id}.dkr.ecr.${Variables.region}.amazonaws.com/${Variables.registry.image}`
+  },
+  directory: {
+    name: 'central-directory',
+    imageTag: 'v0.8.1',
+    environment: [
+      {
+        name: 'CDIR_DATABASE_URI',
+        value: `postgres://${Variables.directory.db.user}:${Variables.directory.db.password}@${Variables.directory.db.host}:5432/${Variables.directory.db.database}`
+      },
+      {
+        name: 'CDIR_HOSTNAME',
+        value: Variables.directory.hostname
+      },
+      {
+        name: 'CDIR_END_USER_REGISTRY_URL',
+        value: Variables.registry.hostname
+      }
+    ],
+    desiredCount: 1,
+    port: Variables.directory.port,
+    image: `${Variables.aws_account_id}.dkr.ecr.${Variables.region}.amazonaws.com/${Variables.directory.image}`
   }
 }

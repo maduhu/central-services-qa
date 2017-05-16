@@ -16,5 +16,16 @@ module.exports = {
     hostname: process.env.CREG_HOSTNAME || 'http://central-end-user-registry-1833170602.us-west-2.elb.amazonaws.com',
     port: process.env.CREG_PORT || 3001,
     image: 'leveloneproject/central-end-user-registry'
+  },
+  directory: {
+    db: {
+      host: process.env.CDIR_DB_HOST || dbHost,
+      user: process.env.CDIR_DB_USER || 'central_directory',
+      password: process.env.CDIR_DB_PASSWORD || dbPassword,
+      database: process.env.CDIR_DB_DATABASE || 'central_directory'
+    },
+    hostname: process.env.CDIR_HOSTNAME || 'http://central-directory-214462011.us-west-2.elb.amazonaws.com',
+    port: process.env.CDIR_PORT || 3000,
+    image: 'leveloneproject/central-end-user-registry'
   }
 }
