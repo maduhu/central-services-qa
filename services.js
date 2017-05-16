@@ -53,7 +53,7 @@ module.exports = {
       },
       {
         name: 'CLEDG_EXPIRES_TIMEOUT',
-        value: 5000
+        value: '5000'
       }
     ],
     desiredCount: 1,
@@ -74,7 +74,7 @@ module.exports = {
       },
       {
         name: 'CLEDG_EXPIRES_TIMEOUT',
-        value: 5000
+        value: '5000'
       }
     ],
     desiredCount: 1,
