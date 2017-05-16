@@ -20,9 +20,12 @@ const deployService = (cluster, service, taskDefinition, desiredCount) => {
     desiredCount
   }
 
-  console.log(`Deploying ${taskDefinition} to ${service} on cluster ${clusterName}`)
+  console.log(`Deploying ${taskDefinition} to ${service} on cluster ${cluster}`)
   return ecs.updateService(params).promise()
-    .then(result => result.service.taskDefinition)
+    .then(result => {
+      console.log(`Deployed ${result.service.taskDefinition} to ${result.service.serviceName} on ${result.service.clusterArn}`)
+      return result.service.taskDefinition
+    })
 }
 
 module.exports = {
