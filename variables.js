@@ -26,6 +26,6 @@ module.exports = {
     },
     hostname: process.env.CDIR_HOSTNAME || 'http://central-directory-214462011.us-west-2.elb.amazonaws.com',
     port: process.env.CDIR_PORT || 3000,
-    image: 'leveloneproject/central-end-user-registry'
+    image: 'leveloneproject/central-directory'
   }
 }
