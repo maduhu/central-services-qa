@@ -27,5 +27,24 @@ module.exports = {
     hostname: process.env.CDIR_HOSTNAME || 'http://central-directory-214462011.us-west-2.elb.amazonaws.com',
     port: process.env.CDIR_PORT || 3000,
     image: 'leveloneproject/central-directory'
+  },
+  ledger: {
+    db: {
+      host: process.env.CLEDG_DB_HOST || dbHost,
+      user: process.env.CLEDG_DB_USER || 'central_ledger',
+      password: process.env.CLEDG_DB_PASSWORD || dbPassword,
+      database: process.env.CLEDG_DB_DATABASE || 'central_ledger'
+    },
+    admin: {
+      key: process.env.CLEDG_ADMIN_KEY,
+      secret: process.env.CLEDG_ADMIN_SECRET
+    },
+    hostname: process.env.CLEDG_HOSTNAME || 'http://central-ledger-1139971789.us-west-2.elb.amazonaws.com',
+    port: process.env.CLEDG_PORT || 3000,
+    image: 'leveloneproject/central-ledger'
+  },
+  ledger_admin: {
+    port: process.env.CLEDG_ADMIN_PORT || 3001,
+    image: 'leveloneproject/central-ledger-admin'
   }
 }

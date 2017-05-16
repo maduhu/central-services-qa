@@ -38,5 +38,47 @@ module.exports = {
     desiredCount: 1,
     port: Variables.directory.port,
     image: `${Variables.aws_account_id}.dkr.ecr.${Variables.region}.amazonaws.com/${Variables.directory.image}`
+  },
+  ledger: {
+    name: 'central-ledger',
+    imageTag: 'v1.80.0',
+    environment: [
+      {
+        name: 'CLEDG_DATABASE_URI',
+        value: `postgres://${Variables.ledger.db.user}:${Variables.ledger.db.password}@${Variables.ledger.db.host}:5432/${Variables.ledger.db.database}`
+      },
+      {
+        name: 'CLEDG_HOSTNAME',
+        value: Variables.ledger.hostname
+      },
+      {
+        name: 'CLEDG_EXPIRES_TIMEOUT',
+        value: 5000
+      }
+    ],
+    desiredCount: 1,
+    port: Variables.ledger.port,
+    image: `${Variables.aws_account_id}.dkr.ecr.${Variables.region}.amazonaws.com/${Variables.ledger.image}`
+  },
+  ledger_admin: {
+    name: 'central-ledger-admin',
+    imageTag: 'v1.80.0',
+    environment: [
+      {
+        name: 'CLEDG_DATABASE_URI',
+        value: `postgres://${Variables.ledger.db.user}:${Variables.ledger.db.password}@${Variables.ledger.db.host}:5432/${Variables.ledger.db.database}`
+      },
+      {
+        name: 'CLEDG_HOSTNAME',
+        value: Variables.ledger.hostname
+      },
+      {
+        name: 'CLEDG_EXPIRES_TIMEOUT',
+        value: 5000
+      }
+    ],
+    desiredCount: 1,
+    port: Variables.ledger_admin.port,
+    image: `${Variables.aws_account_id}.dkr.ecr.${Variables.region}.amazonaws.com/${Variables.ledger_admin.image}`
   }
 }
