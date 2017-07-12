@@ -54,6 +54,10 @@ module.exports = {
       {
         name: 'CLEDG_EXPIRES_TIMEOUT',
         value: '5000'
+      },
+      {
+        name: 'CLEDG_ENABLE_BASIC_AUTH',
+        value: 'true'
       }
     ],
     desiredCount: 1,
